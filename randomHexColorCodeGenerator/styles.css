@@ -1,0 +1,100 @@
+/* I will be using the Raleway font style from google fonts and importing it accordingly */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sacramento&display=swap');
+
+/* Setting some color variables for the project */
+
+:root {
+    --white: #fdfff5;
+    --black: #1c2b2d;
+    --blue: #315399;
+    --color-primary: #800080;
+    --color-sec: #db6400;
+    --gray: #969892;
+    --dark-gray: #222831; 
+}
+
+/* CSS Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Raleway', cursive;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+}
+
+.counter-div {
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    width: 40rem;
+    padding: 2rem;
+    background: #27104E;
+    color: var(--white);
+    text-align: center;
+}
+
+/* Target all the direct children of the counter-div */
+
+.counter-div > * {
+    margin-bottom: 2rem;
+}
+
+/* Make count bigger */
+
+.count {
+    font-size: 5rem;    
+    border: 1px solid var(--white);
+    padding: 0 1rem;
+}
+
+/* Target each of the buttons inside the button div that has the class of buttons  */
+
+.buttons button {
+    padding: 1rem;
+    margin: 0 1rem;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* style the background of each of the buttons */
+
+button.subtract {
+    background-color: #ffa751;
+}
+
+button.reset {
+    background-color: var(--white);
+    color: var(--black);
+}
