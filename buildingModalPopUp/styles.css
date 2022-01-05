@@ -34,9 +34,8 @@ body {
     justify-content: center;
     height: 100vh;
     background: #4568DC;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 p {
@@ -97,7 +96,6 @@ form button:hover {
 
 .modal {
     display: none;
-    border: 2px solid blue;
     position: fixed;
     left: 0;
     top: 0;
@@ -110,24 +108,35 @@ form button:hover {
 
 .modal-content {
     width: 80%;
-    max-width: 60rem;
+    max-width: 80rem;
     background-color: var(--gray);
     margin: 15% auto;
     padding: 2rem;
     border: 1px solid #777;
     text-align: center;
     animation: slide ease .8s;
+    border-radius: 4px;
 }
 
 /* Animation */
 
 @keyframes slide {
-    from {
-        transform: translateY(-30);
+    0% {
+        transform: translateY(-30rem);
     }
-    to {
+    100% {
         transform: translateY(0);
     }
+}
+
+/* Close icon */
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: var(--black);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 
