@@ -107,6 +107,7 @@ button {
     border-radius: 3px;
     color: var(--white);
     background: var(--dark-gray);
+    cursor: pointer;
 }
 
 p.result {
