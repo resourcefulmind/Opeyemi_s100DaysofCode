@@ -1,0 +1,212 @@
+/* I will be using the Raleway font style from google fonts and importing it accordingly */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sacramento&display=swap');
+
+/* Setting some color variables for the project */
+
+:root {
+    --white: #fdfff5;
+    --black: #1c2b2d;
+    --blue: #315399;
+    --color-primary: #800080;
+    --color-sec: #db6400;
+    --gray: #969892;
+    --dark-gray: #222831; 
+}
+
+/* CSS Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Raleway', cursive;
+}
+
+
+
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.vowel {
+    width: 40rem;
+    background: var(--white);
+    padding: 5rem 3rem;
+    border-radius: 5px;
+}
+
+input {
+    border: 2px solid red;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--gray);
+    padding: 1rem 10px;
+    font-size: 1.6rem;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+button {
+    border: 2px solid red;
+    padding: 1rem 10px;
+    border: none;
+    outline: none;
+    width: 25%;
+    border-radius: 3px;
+    color: var(--white);
+    background: var(--dark-gray);
+    cursor: p;
+}
+
+p.result {
+    margin-top: 3.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    
+}
+
+
+
+/* Animation for a little aesthetics */
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: var(--dark-gray);
+    overflow: hidden;
+    z-index: -1;
+}
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 19s linear infinite;
+    
+}
+
+.background li:nth-child(0) {
+    left: 78%;
+    width: 145px;
+    height: 145px;
+    bottom: -145px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 51%;
+    width: 196px;
+    height: 196px;
+    bottom: -196px;
+    animation-delay: 1s;
+}
+.background li:nth-child(2) {
+    left: 13%;
+    width: 167px;
+    height: 167px;
+    bottom: -167px;
+    animation-delay: 1s;
+}
+.background li:nth-child(3) {
+    left: 42%;
+    width: 112px;
+    height: 112px;
+    bottom: -112px;
+    animation-delay: 10s;
+}
+.background li:nth-child(4) {
+    left: 50%;
+    width: 184px;
+    height: 184px;
+    bottom: -184px;
+    animation-delay: 10s;
+}
+.background li:nth-child(5) {
+    left: 19%;
+    width: 137px;
+    height: 137px;
+    bottom: -137px;
+    animation-delay: 11s;
+}
+.background li:nth-child(6) {
+    left: 82%;
+    width: 140px;
+    height: 140px;
+    bottom: -140px;
+    animation-delay: 14s;
+}
+.background li:nth-child(7) {
+    left: 18%;
+    width: 151px;
+    height: 151px;
+    bottom: -151px;
+    animation-delay: 26s;
+}
+.background li:nth-child(8) {
+    left: 72%;
+    width: 108px;
+    height: 108px;
+    bottom: -108px;
+    animation-delay: 23s;
+}
+.background li:nth-child(9) {
+    left: 51%;
+    width: 142px;
+    height: 142px;
+    bottom: -142px;
+    animation-delay: 17s;
+}
+
