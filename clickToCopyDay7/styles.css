@@ -1,0 +1,79 @@
+/* I will be using the Raleway font style from google fonts and importing it accordingly */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sacramento&display=swap');
+
+/* Setting some color variables for the project */
+
+:root {
+    --white: #fdfff5;
+    --black: #1c2b2d;
+    --blue: #315399;
+    --color-primary: #800080;
+    --color-sec: #db6400;
+    --gray: #969892;
+    --dark-gray: #222831; 
+}
+
+/* CSS Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+}
+
+body {
+    font-family: 'Raleway', cursive;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.box {
+    height: 100vh;
+}
+
+h4 {
+    text-align: center;
+    padding-right: 50px;
+}
+
+.btn {
+    color: var(--white);
+    outline: white;
+    border: 2px solid white;
+    margin-left: 10px;
+}
