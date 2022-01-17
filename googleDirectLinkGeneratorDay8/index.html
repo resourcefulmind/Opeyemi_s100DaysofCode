@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opeyemi's Google-Drive Direct Link Download Generator</title>
+    <!-- Font awesome kit to be used in the project -->
+    <script
+      src="https://kit.fontawesome.com/0eb27a5d5e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS sheet link -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="main-container">
+        <div class="instructions">
+          <div class="container">
+            <h2 class="line">Instructions</h2>
+            <p>
+              Step-By-Step Instructions to get the link to your Google Drive
+              file
+            </p>
+            <hr />
+            <ol type="1">
+              <li>
+                <p>
+                  Open
+                  <a
+                    href="https://www.google.com/drive/
+                    "
+                    >Google Drive</a
+                  >
+                </p>
+              </li>
+              <li>
+                <p>Navigate to the preferred file.</p>
+              </li>
+              <li>
+                <p>Right click on the preferred file.</p>
+              </li>
+              <li>
+                <p>Select "Get Link" and click "Copy Link"</p>
+              </li>
+              <li>
+                <p>
+                  Paste the link in the placeholder and click the "Generate
+                  Direct Download Link" button.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- DOWNLOADS -->
+        <div class="download-link">
+          <div class="container">
+            <h1>A Direct Download Generator For Your Google Drive Files</h1>
+            <input type="radio" name="tab" id="login" checked />
+            <input type="radio" name="tab" id="register" />
+            <input type="radio" name="tab" id="reset" />
+            <nav>
+              <label for="login" class="login">
+                <i class="fas fa-sign-in-alt"></i>
+                Paste Link
+              </label>
+              <label for="login" class="register">
+                <i class="fas fa-headphones-alt"></i>
+                Embed Audio
+              </label>
+              <label for="login" class="reset">
+                <i class="fas fa-photo-video"></i>
+                Embed Video/Docs
+              </label>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
