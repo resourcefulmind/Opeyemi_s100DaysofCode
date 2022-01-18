@@ -74,6 +74,89 @@
                 Embed Video/Docs
               </label>
             </nav>
+            <!-- WHERE THE MAIN CONTENT RESIDES -->
+            <section>
+              <div class="content content-link">
+                <i class="fas fa-download"></i>
+                <h2>Hey There, got a Google Drive file link?</h2>
+                <p>Paste your link below</p>
+                <form action="">
+                  <label for="glink">
+                    <i class="fab fa-google-drive"></i>
+                    <input
+                      type="text"
+                      placeholder="Google Drive Link..."
+                      id="glink"
+                      class="glink"
+                      autocomplete="off"
+                      required
+                    />
+                  </label>
+                  <button id="btn" class="btn">
+                    Generate Direct Download Link
+                  </button>
+
+                  <div class="embed-code">
+                    <hr />
+                    <h3>Your Direct Download Link Is Below</h3>
+                    <textarea
+                      name=""
+                      id="download-link"
+                      class="embed"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                    <span class="copy">Copy</span>
+                  </div>
+                </form>
+              </div>
+
+                  <!-- SECTION FOR AUDIO EMBEDDING -->
+              <div class="content content-audio">
+                <i class="fas fa-headphones-alt"></i>
+                <h2>Audio Embed Link</h2>
+                <p>
+                  Your link is an Audio file? Use the code snippet to embed it
+                  on any web page.
+                </p>
+                <form action="">
+                  <div class="embed-code">
+                    <hr />
+                    <h3>Audio Embed Link Below</h3>
+                    <textarea
+                      name=""
+                      id="embed-audio"
+                      class="embed"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                    <span class="copy-audio">Copy</span>
+                  </div>
+
+                  <!-- SECTION FOR VIDEO EMBEDDING -->
+              <div class="content content-video">
+                <i class="fas fa-photo-video"></i>
+                <h2>Video/Doc Embed Link</h2>
+                <p>
+                  Your link is a video file? Use the code snippet to embed it
+                  on any web page.
+                </p>
+                <form action="">
+                  <div class="embed-code">
+                    <hr />
+                    <h3>Video/Document Embed Link Below</h3>
+                    <textarea
+                      name=""
+                      id="embed-video"
+                      class="embed"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                    <span class="copy-video">Copy</span>
+                  </div>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </section>
