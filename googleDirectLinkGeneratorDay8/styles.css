@@ -1,0 +1,104 @@
+/* I will be using the Raleway font style from google fonts and importing it accordingly */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sacramento&display=swap');
+
+/* Setting some color variables for the project */
+
+:root {
+    --white: #fdfff5;
+    --black: #1c2b2d;
+    --blue: #315399;
+    --color-primary: #800080;
+    --color-sec: #db6400;
+    --gray: #969892;
+    --dark-gray: #222831; 
+    --deep-blue: #345083;
+    --accented-background: #993F5E;
+    --nav: #4BB9DD;
+    --secondaryPurpose: #90A5C1;
+    --text: #F7F9F9;
+}
+
+/* CSS Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Raleway', cursive;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.instructions {
+    font-size: 1.6rem;
+    width: 30%;
+    height: 100vh;
+    border: 2px solid gold;
+    background-color: var(--deep-blue);
+    padding-top: 5rem;
+    color: var(--text);
+}
+
+.instructions h2 {
+    font-size: 3.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+.instructions h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 2px;
+    background-color: var(--text);
+}
+
+.instructions ol {
+ padding: 1rem 0 0 1.5rem;
+}
+
+.instructions ol a {
+    color: gold;
+    text-decoration: none;
+}
+
+.download-link {
+    width: 70%;
+    border: 2px solid blue;
+    padding-top: 5rem;
+}
+.download-link section {
+    border: 2px solid var(--gray)
+}
