@@ -99,6 +99,49 @@ img {
     border: 2px solid blue;
     padding-top: 5rem;
 }
+
 .download-link section {
-    border: 2px solid var(--gray)
+    border: 2px solid var(--gray);
+    border-radius: 0 0 10px 10px;
 }
+
+main h1 {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 5rem;
+    color: var(--black);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+main input[type=radio] {
+    display: none;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid saddlebrown;
+    padding: 10px;
+    position: relative;
+    background: var(--gray);
+    z-index: 1;
+}
+
+main nav label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+    position: relative;
+    color: var(--text);
+    cursor: pointer;
+    border: 2px solid green;
+}
+
+main nav label i {
+    padding-right: 5px;
+    color: gold;
+}
+
