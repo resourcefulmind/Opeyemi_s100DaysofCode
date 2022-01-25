@@ -60,7 +60,6 @@ img {
     font-size: 1.6rem;
     width: 30%;
     height: 100vh;
-    border: 2px solid gold;
     background-color: var(--deep-blue);
     padding-top: 5rem;
     color: var(--text);
@@ -82,7 +81,11 @@ img {
     bottom: 0;
     width: 25%;
     height: 2px;
-    background-color: var(--text);
+    background-color: gold;
+}
+
+hr {
+    background: gold;
 }
 
 .instructions ol {
@@ -96,7 +99,6 @@ img {
 
 .download-link {
     width: 70%;
-    border: 2px solid blue;
     padding-top: 5rem;
 }
 
@@ -107,7 +109,7 @@ img {
 
 main h1 {
     display: block;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 5rem;
     color: var(--black);
@@ -123,7 +125,6 @@ main nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid saddlebrown;
     padding: 10px;
     position: relative;
     background: var(--gray);
@@ -137,7 +138,6 @@ main nav label {
     position: relative;
     color: var(--text);
     cursor: pointer;
-    border: 2px solid green;
 }
 
 main nav label i {
@@ -145,14 +145,188 @@ main nav label i {
     color: gold;
 }
 
-.slide {
+nav .slide {
     position: absolute;
     top: 0;
     left: 3%;
     width: 26%;
     height: 100%;
     border-radius: 3px;
+    z-index: -1;
+    transition: all .3s;
+    background: var(--deep-blue)
 }
 
+#register:checked ~ nav .slide {
+    left: 31%;
+    
+}
 
+#reset:checked ~ nav .slide {
+    left: 66%;
+}
+
+.content {
+    display: none;
+}
+
+#login:checked ~ section .content-link {
+    display: block;
+}
+
+#register:checked ~ section .content-audio {
+    display: block;
+}
+
+#reset:checked ~ section .content-video {
+    display: block;
+}
+
+/* STYLING FORMS WITHIN THE CONTENT */
+
+section .content {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.content > i {
+    font-size: 3rem;
+    color: gold;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 5rem;
+
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    line-height: 2;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.content h2::after {
+    content: "";
+    position: absolute;
+    left: 12rem;
+    bottom: 2rem;
+    width: 2.5%;
+    height: 2px;
+    background-color: var(--dark-gray);
+}
+
+.content h2::before {
+    content: "";
+    position: absolute;
+    right: 12rem;
+    bottom: 2rem;
+    width: 2.5%;
+    height: 2px;
+    background-color: var(--dark-gray);
+}
+
+.content p {
+    padding-bottom: 1rem;
+    font-style: italic;
+}
+
+.content form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content form label {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content form label i {
+    font-size: 1.8rem;
+    color: gold;
+    padding: 10px;
+    border-radius: 5rem;
+}
+
+.content form label input {
+    display: inline;
+    width: 70%;
+    padding: 1.3rem 3rem;
+    border-radius: 10px 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: var(--black);
+    transition: all .3s;
+}
+
+.content form label input:focus:invalid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accented-background);
+}
+
+.content form label input:valid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid green;
+    background: var(--white);
+}
+
+::placeholder {
+    font-size: 1.6rem;
+    color: var(--gray)
+}
+
+.content .btn {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: var(--blue);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.content .btn:hover {
+    background: var(--color-sec)
+}
+
+.embed-code {
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.embed-code h3 {
+    margin-top: 1rem;
+}
+
+.content form textarea {
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.embed-code span {
+    position: absolute;
+    right: 1px;
+    bottom: 5px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: var(--blue);
+    color: var(--white);
+    padding: 5px 8px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.embed-code span:hover {
+    font-size: 1.8rem;
+}
 
