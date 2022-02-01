@@ -14,3 +14,24 @@ const gLink = document.getElementById("glink");
 const btn = document.getElementById("btn");
 //textarea
 const downloadLink = document.getElementById("download-link");
+
+//add an event listener that will fire the function for generating the link when the button is clicked
+btn.addEventListener("click", generateLink);
+
+function generateLink(e) {
+    //make sure the form does not always refresh each time the button is clicked
+    e.preventDefault();
+    //create variable to hold the value of the link
+    const gLinkValue = gLink.value;
+    //check if the value entered is actually a google drive link file eg https://drive.google.com/file/d/1nGcgx9Z7fywDISMaaha5eES9DdAquspc/view?usp=sharing
+    const confirmGoogleLink = gLink.value.includes("https://drive.google.com/file/d/");
+    // console.log(gLinkValue);
+    //confirm if the link pasted in browser is really a google link and if it is, replace the part of the link before the file ID with download string and the part of the link after the id with an empty string...understand this by looking at a sample google drive link
+    https://drive.google.com/u/0/uc?id=1nGcgx9Z7fywDISMaaha5eES9DdAquspc&export=download
+    if (confirmGoogleLink == true) {
+        const getDirectDownloadLink = gLinkValue.replace("https://drive.google.com/file/d/", "https://drive.google.com/u/0/uc?id=")
+        .replace("/view?usp=sharing", "&export=download");
+
+        console.log(getDirectDownloadLink);
+    }
+}
