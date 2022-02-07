@@ -97,6 +97,10 @@ hr {
     text-decoration: none;
 }
 
+/* .instructions ol li p span {
+    color: gold;
+} */
+
 .download-link {
     width: 70%;
     padding-top: 5rem;

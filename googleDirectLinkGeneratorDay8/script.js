@@ -13,7 +13,9 @@ const gLink = document.getElementById("glink");
 //direct download button
 const btn = document.getElementById("btn");
 //textarea
-const downloadLink = document.getElementById("download-link");
+const directDownloadLink = document.getElementById("download-link");
+
+const copyLink = document.querySelector(".copy");
 
 //add an event listener that will fire the function for generating the link when the button is clicked
 btn.addEventListener("click", generateLink);
@@ -32,6 +34,26 @@ function generateLink(e) {
         const getDirectDownloadLink = gLinkValue.replace("https://drive.google.com/file/d/", "https://drive.google.com/u/0/uc?id=")
         .replace("/view?usp=sharing", "&export=download");
 
-        console.log(getDirectDownloadLink);
+        directDownloadLink.value = getDirectDownloadLink;
+        
     }
+
+    //click and convert our file link from a sharing link to a download link and display in textarea  is a success
+    //Next, make copy button functional.
+    function copyText(target) {
+        //give alert for when nothing is selected and copy button is clicked
+        if (target.value == " ") {
+            alert("Oops...You have not generated a download link yet.")
+        } else {
+            //select link, copy to board and give alert for when the link has been copied
+            target.select();
+            navigator.clipboard.writeText(copyLink);
+            alert("Your download link has been copied to the clipboard");
+
+        }
+    }
+
+    copyLink.addEventListener("click", () => {
+        return copyText(directDownloadLink);
+    })
 }
