@@ -15,8 +15,6 @@ const btn = document.getElementById("btn");
 //textarea
 const directDownloadLink = document.getElementById("download-link");
 
-const copyLink = document.querySelector(".copy");
-
 //add an event listener that will fire the function for generating the link when the button is clicked
 btn.addEventListener("click", generateLink);
 
@@ -36,24 +34,54 @@ function generateLink(e) {
 
         directDownloadLink.value = getDirectDownloadLink;
         
-    }
-
-    //click and convert our file link from a sharing link to a download link and display in textarea  is a success
-    //Next, make copy button functional.
-    function copyText(target) {
-        //give alert for when nothing is selected and copy button is clicked
-        if (target.value == " ") {
-            alert("Oops...You have not generated a download link yet.")
-        } else {
-            //select link, copy to board and give alert for when the link has been copied
-            target.select();
-            navigator.clipboard.writeText(copyLink);
-            alert("Your download link has been copied to the clipboard");
-
+        //click and convert our file link from a sharing link to a download link and display in textarea  is a success
+        //Next, make copy button functional.
+        function copyText(target) {
+            //give alert for when nothing is selected and copy button is clicked
+            if (target.value == "") {
+                alert("Oops...You have not generated a download link yet.")
+            } else {
+                //select link, copy to board and give alert for when the link has been copied
+                target.select();
+                navigator.clipboard.writeText(directDownloadLink.value);
+                alert("Your download link has been copied to the clipboard");
+            }
         }
-    }
+        const copyLink = document.querySelector(".copy");
+        copyLink.addEventListener("click", () => {
+            return copyText(directDownloadLink);
+        })
 
-    copyLink.addEventListener("click", () => {
-        return copyText(directDownloadLink);
-    })
+        // To successfully embed audio, satisfy two conditions, 
+        // condition 1 will be to add the opening part of the audio embed html tag to the file id
+        // condition 2 will be to add the above to the closing part of the audio embed tag
+
+        //first part of audio embed html tag
+        const audio1 = '<audio width="300" height="32" controls="controls" src="';
+        //second part of audio embed html tag
+        const audio2 = '" type="audio/mp3"></audio>'
+        //embedding audio
+        const embedAudio = document.getElementById("embed-audio");
+        embedAudio.value = `${audio1}${directDownloadLink.value}${audio2}`;
+        //it will display in textarea and now enable the copy to clipboard feature
+        const copyAudioEmbed = document.querySelector(".copy-audio");
+        copyAudioEmbed.addEventListener("click", () => {
+            return copyText(embedAudio);
+        })
+
+        //For the video, replicate above code but some parts of the file link is not needed
+        //replace the "sharing" part of the file link because it is not needed
+        const getVideoLink = gLinkValue.replace("/view?usp=sharing", "")
+
+        const video1 = '<iframe src="';
+        const video2 = '/preview" width="560" height="315"></iframe>';
+
+        const embedVideo = document.getElementById("embed-video");
+        embedVideo.value = `${video1}${getVideoLink}${video2}`;
+        
+        const copyVideoEmbed = document.querySelector(".copy-video");
+        copyVideoEmbed.addEventListener("click", () => {
+            return copyText(embedVideo);
+        })
+    }
 }
