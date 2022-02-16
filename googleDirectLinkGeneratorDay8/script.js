@@ -15,6 +15,8 @@ const btn = document.getElementById("btn");
 //textarea
 const directDownloadLink = document.getElementById("download-link");
 
+const copyLink = document.querySelector(".copy");
+
 //add an event listener that will fire the function for generating the link when the button is clicked
 btn.addEventListener("click", generateLink);
 
@@ -24,10 +26,11 @@ function generateLink(e) {
     //create variable to hold the value of the link
     const gLinkValue = gLink.value;
     //check if the value entered is actually a google drive link file eg https://drive.google.com/file/d/1nGcgx9Z7fywDISMaaha5eES9DdAquspc/view?usp=sharing
+    
     const confirmGoogleLink = gLink.value.includes("https://drive.google.com/file/d/");
     // console.log(gLinkValue);
     //confirm if the link pasted in browser is really a google link and if it is, replace the part of the link before the file ID with download string and the part of the link after the id with an empty string...understand this by looking at a sample google drive link
-    https://drive.google.com/u/0/uc?id=1nGcgx9Z7fywDISMaaha5eES9DdAquspc&export=download
+    //https://drive.google.com/u/0/uc?id=1nGcgx9Z7fywDISMaaha5eES9DdAquspc&export=download
     if (confirmGoogleLink == true) {
         const getDirectDownloadLink = gLinkValue.replace("https://drive.google.com/file/d/", "https://drive.google.com/u/0/uc?id=")
         .replace("/view?usp=sharing", "&export=download");
@@ -36,6 +39,7 @@ function generateLink(e) {
         
         //click and convert our file link from a sharing link to a download link and display in textarea  is a success
         //Next, make copy button functional.
+        //line 39-50 for function copyText
         function copyText(target) {
             //give alert for when nothing is selected and copy button is clicked
             if (target.value == "") {
@@ -43,11 +47,11 @@ function generateLink(e) {
             } else {
                 //select link, copy to board and give alert for when the link has been copied
                 target.select();
-                navigator.clipboard.writeText(directDownloadLink.value);
+                navigator.clipboard.writeText(target.value);
                 alert("Your download link has been copied to the clipboard");
             }
         }
-        const copyLink = document.querySelector(".copy");
+        
         copyLink.addEventListener("click", () => {
             return copyText(directDownloadLink);
         })
@@ -84,6 +88,6 @@ function generateLink(e) {
             return copyText(embedVideo);
         })
     } else {
-        alert("Oops, this is not a Google Drive File link...Kindly enter a Google Drive File link")
+        alert("Oops, this is not a Google Drive File link...Kindly enter a Google Drive File link");
     }
 }
